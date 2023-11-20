@@ -1,0 +1,152 @@
+{
+  "_version": "1.58.0",
+  "sap.app": {
+    "id": "purchaseorder1",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.11.4",
+      "toolsId": "f702fc10-4216-40c1-80a8-320f242cc61e"
+    },
+    "dataSources": {
+      "mainService": {
+        "uri": "/s4hanacloud/sap/opu/odata/sap/API_PURCHASEORDER_PROCESS_SRV/",
+        "type": "OData",
+        "settings": {
+          "annotations": [],
+          "localUri": "localService/metadata.xml",
+          "odataVersion": "2.0"
+        }
+      }
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.120.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {},
+        "sap.f": {},
+        "sap.suite.ui.generic.template": {},
+        "sap.ui.comp": {},
+        "sap.ui.generic.app": {},
+        "sap.ui.table": {},
+        "sap.ushell": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "purchaseorder1.i18n.i18n"
+        }
+      },
+      "": {
+        "dataSource": "mainService",
+        "preload": true,
+        "settings": {}
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "viewType": "XML",
+        "async": true,
+        "viewPath": "purchaseorder1.view",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "clearControlAggregation": false
+      },
+      "routes": [
+        {
+          "name": "Routehome",
+          "pattern": ":?query:",
+          "target": [
+            "Targethome"
+          ]
+        },
+        {
+          "name": "RoutePOhome",
+          "pattern": "/po",
+          "target": [
+            "TargetPOhome"
+          ]
+        }
+      ],
+      "targets": {
+        "Targethome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "home",
+          "viewName": "home"
+        },
+        "TargetPOhome": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "viewId": "POhome",
+          "viewName": "POhome"
+        },
+        "TargetPOMaster": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "controlAggregation": "masterPages",
+          "viewId": "POhome1",
+          "viewName": "POMaster"
+        },
+        "TargetPODetail1": {
+          "viewType": "XML",
+          "transition": "slide",
+          "clearControlAggregation": false,
+          "controlAggregation": "detailPages",
+          "viewId": "POhome2",
+          "viewName": "PODetail1"
+        }
+      }
+    
+    },
+    "rootView": {
+      "viewName": "purchaseorder1.view.App",
+      "type": "XML",
+      "async": true,
+      "id": "App"
+    }
+  }
+}

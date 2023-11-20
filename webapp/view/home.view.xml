@@ -1,0 +1,17 @@
+<mvc:View controllerName="purchaseorder1.controller.home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m" xmlns:cards="sap.f.cards"
+    xmlns:form="sap.ui.layout.form">
+     <GenericTile id="_IDGenGenericTile1" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Purchase Order" subheader=""
+                press=".onPress" >
+        <TileContent id="_IDGenTileContent1">
+        
+        </TileContent>
+    </GenericTile>
+ 
+    <GenericTile id="_IDGenGenericTile2" class="sapUiTinyMarginBegin sapUiTinyMarginTop tileLayout" header="Sales Order" subheader="" press=".onPress2">
+        <TileContent id="_IDGenTileContent2">
+           
+        </TileContent>
+    </GenericTile>
+</mvc:View>
